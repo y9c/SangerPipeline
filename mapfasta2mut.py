@@ -28,9 +28,7 @@ def run_blast( seq, subject_fasta ):
     try:
         p = Popen( str(cline).split(), stdout=PIPE, stdin=PIPE, stderr=STDOUT )
     except OSError:
-        print "Please ensure blastn is installed and in your PATH"
-        sys.exit( 1 )
-    stdeo, stdin = p.communicate( )
+        print "Please ensure blastn is installed and in your PATH" sys.exit( 1 ) stdeo, stdin = p.communicate( )
 
     return parse_blast( seq, stdeo )
 
